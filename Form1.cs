@@ -108,14 +108,14 @@ namespace Sistema_de_Gestión_de_Citas_Médicas
             foreach (Cita cita in listaCitas)
             {
                 Doctores doctor = doctores.Find(d => d.Id == cita.IdDoctor);
-                Paciente paciente = pacientes.Find(p => p.Dpi == cita.IdPaciente);
+                Paciente paciente = pacientes.Find(p => p.Dpi == cita.DpiPaciente);
 
                 dataGridView1.Rows.Add(
                     doctor.NombreCompleto,
                     doctor.Especialidad,
                     paciente.Nombre,
-                    cita.Fecha.ToShortDateString(),
-                    cita.Hora
+                    cita.FechaCita.ToShortDateString(),
+                    cita.HoraCita
                 );
             }
         }
@@ -151,6 +151,11 @@ namespace Sistema_de_Gestión_de_Citas_Médicas
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            CargarReporte();
+        }
+
+        private void buttonOrdenar_Click(object sender, EventArgs e)
         {
             CargarReporte();
         }

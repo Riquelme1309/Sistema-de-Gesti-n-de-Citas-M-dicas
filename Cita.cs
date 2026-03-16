@@ -1,25 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sistema_de_Gestión_de_Citas_Médicas
 {
     internal class Cita
     {
         int idDoctor;
-        int idPaciente;
+        string dpiPaciente;
         DateTime fechaCita;
-        int horaCita;
+        string horaCita;
 
-        public Cita(int id, object dPI, DateTime fecha, string hora)
+        public Cita(int idDoctor, string dpiPaciente, DateTime fechaCita, string horaCita)
         {
+            this.idDoctor = idDoctor;
+            this.dpiPaciente = dpiPaciente;
+            this.fechaCita = fechaCita;
+            this.horaCita = horaCita;
         }
 
         public int IdDoctor { get => idDoctor; set => idDoctor = value; }
-        public int IdPaciente { get => idPaciente; set => idPaciente = value; }
+        public string DpiPaciente { get => dpiPaciente; set => dpiPaciente = value; }
         public DateTime FechaCita { get => fechaCita; set => fechaCita = value; }
-        public int HoraCita { get => horaCita; set => horaCita = value; }
+        public string HoraCita { get => horaCita; set => horaCita = value; }
     }
 }

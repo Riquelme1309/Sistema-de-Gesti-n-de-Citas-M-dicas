@@ -47,6 +47,7 @@
             this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonOrdenar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageRegistro.SuspendLayout();
             this.tabPageReporte.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // tabPageReporte
             // 
+            this.tabPageReporte.Controls.Add(this.buttonOrdenar);
             this.tabPageReporte.Controls.Add(this.button1);
             this.tabPageReporte.Controls.Add(this.dataGridView1);
             this.tabPageReporte.Location = new System.Drawing.Point(4, 25);
@@ -232,6 +234,16 @@
             this.Hora.Name = "Hora";
             this.Hora.Width = 125;
             // 
+            // buttonOrdenar
+            // 
+            this.buttonOrdenar.Location = new System.Drawing.Point(91, 309);
+            this.buttonOrdenar.Name = "buttonOrdenar";
+            this.buttonOrdenar.Size = new System.Drawing.Size(135, 40);
+            this.buttonOrdenar.TabIndex = 2;
+            this.buttonOrdenar.Text = "Ordenar";
+            this.buttonOrdenar.UseVisualStyleBackColor = true;
+            this.buttonOrdenar.Click += new System.EventHandler(this.buttonOrdenar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,6 +283,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.Button buttonOrdenar;
     }
 }
 
