@@ -80,6 +80,45 @@ namespace Sistema_de_Gestión_de_Citas_Médicas
             comboBoxHoraCita.Items.Add("11:00");
             comboBoxHoraCita.Items.Add("12:00");
         }
+        void CargarReporte()
+        {
+            dataGridView1.Rows.Clear();
+
+            List<Cita> listaCitas = new List<Cita>();
+
+            string[] lineas = File.ReadAllLines("citas.txt");
+
+            foreach (string linea in lineas)
+            {
+                if (string.IsNullOrWhiteSpace(linea))
+                    continue;
+
+                string[] datos = linea.Split(';');
+
+                Cita cita = new Cita(
+                    int.Parse(datos[0]),
+                    datos[1],
+                    DateTime.Parse(datos[2]),
+                    datos[3]
+                );
+
+                listaCitas.Add(cita);
+            }
+
+            foreach (Cita cita in listaCitas)
+            {
+                Doctores doctor = doctores.Find(d => d.Id == cita.IdDoctor);
+                Paciente paciente = pacientes.Find(p => p.Dpi == cita.IdPaciente);
+
+                dataGridView1.Rows.Add(
+                    doctor.NombreCompleto,
+                    doctor.Especialidad,
+                    paciente.Nombre,
+                    cita.Fecha.ToShortDateString(),
+                    cita.Hora
+                );
+            }
+        }
 
         private void buttonRegistro_Click(object sender, EventArgs e)
         {
@@ -108,6 +147,12 @@ namespace Sistema_de_Gestión_de_Citas_Médicas
             CargarDoctores();
             CargarPacientes();
             CargarHoras();
+            CargarReporte();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CargarReporte();
         }
     }
 }

@@ -40,8 +40,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonRegistro = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPageRegistro.SuspendLayout();
+            this.tabPageReporte.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,6 +84,8 @@
             // 
             // tabPageReporte
             // 
+            this.tabPageReporte.Controls.Add(this.button1);
+            this.tabPageReporte.Controls.Add(this.dataGridView1);
             this.tabPageReporte.Location = new System.Drawing.Point(4, 25);
             this.tabPageReporte.Name = "tabPageReporte";
             this.tabPageReporte.Padding = new System.Windows.Forms.Padding(3);
@@ -160,6 +171,67 @@
             this.buttonRegistro.UseVisualStyleBackColor = true;
             this.buttonRegistro.Click += new System.EventHandler(this.buttonRegistro_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Doctor,
+            this.Especialidad,
+            this.Paciente,
+            this.Fecha,
+            this.Hora});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 17);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(742, 285);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(300, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Cargar reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Doctor
+            // 
+            this.Doctor.HeaderText = "Doctor";
+            this.Doctor.MinimumWidth = 6;
+            this.Doctor.Name = "Doctor";
+            this.Doctor.Width = 125;
+            // 
+            // Especialidad
+            // 
+            this.Especialidad.HeaderText = "Especialidad";
+            this.Especialidad.MinimumWidth = 6;
+            this.Especialidad.Name = "Especialidad";
+            this.Especialidad.Width = 125;
+            // 
+            // Paciente
+            // 
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.MinimumWidth = 6;
+            this.Paciente.Name = "Paciente";
+            this.Paciente.Width = 125;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Width = 125;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.MinimumWidth = 6;
+            this.Hora.Name = "Hora";
+            this.Hora.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,6 +244,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageRegistro.ResumeLayout(false);
             this.tabPageRegistro.PerformLayout();
+            this.tabPageReporte.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +264,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonRegistro;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
     }
 }
 
